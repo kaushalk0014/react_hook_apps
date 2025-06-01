@@ -1,13 +1,19 @@
 import React from 'react';
+import  {useGetAllEmployeesQuery} from './ApiCall'
 
 const DisplayList = () => {
 
     const [show, setShow] = React.useState(false);
     const [userInput, setUserInput] = React.useState("")
     const [listValue, setListValue] = React.useState<string[]>([]);
-    const inputRef = React.useRef<HTMLInputElement>(null)
+    const inputRef = React.useRef<HTMLInputElement>(null);
+
+    const {data, isLoading, isSuccess} =useGetAllEmployeesQuery();
 
     const handelClick = () => {
+
+        console.log(data);
+
         setShow(true);
             setListValue((prev)=>[
                 ...prev,
