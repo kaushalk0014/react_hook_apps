@@ -5,7 +5,12 @@ const apiCall = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8080/" }),
   endpoints: (builder) => ({
     getAllEmployees: builder.query<[],void>({
-      query: () => `employee/all`,
+      query: () => {
+        return {
+          url: 'employee/all',
+          method: 'GET'
+        }
+      },
     }),
   }),
 });
