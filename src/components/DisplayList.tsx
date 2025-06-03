@@ -1,5 +1,6 @@
 import React from 'react';
-import  {useGetAllEmployeesQuery} from './ApiCall'
+ 
+import EmployeeDetails from './EmployeeDetails';
 
 const DisplayList = () => {
 
@@ -8,11 +9,8 @@ const DisplayList = () => {
     const [listValue, setListValue] = React.useState<string[]>([]);
     const inputRef = React.useRef<HTMLInputElement>(null);
 
-    const {data, isLoading, isSuccess} =useGetAllEmployeesQuery();
 
     const handelClick = () => {
-
-        console.log(data);
 
         setShow(true);
             setListValue((prev)=>[
@@ -27,7 +25,7 @@ const DisplayList = () => {
             setUserInput(value);
     }
     return (
-        <div>
+        <>
             <input type="text" ref={inputRef} value={userInput} onChange={(e)=>handelChange(e.target.value)} placeholder="Enter text here" />
             <button onClick={() => handelClick()}>Submit</button>
             
@@ -37,9 +35,9 @@ const DisplayList = () => {
                        <li> {item}</li>
                     </div>
                 ))
-
             )}
-        </div>
+            <EmployeeDetails></EmployeeDetails>
+      </>
     )
 };
 
