@@ -2,11 +2,13 @@ import React from 'react';
 
 import './App.css';
 import DisplayList from './components/DisplayList';
+import EmployeeDetails from './components/EmployeeDetails';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <DisplayList/>
+       <EmployeeDetails></EmployeeDetails>
     </div>
   );
 }

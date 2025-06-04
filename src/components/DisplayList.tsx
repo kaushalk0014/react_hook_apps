@@ -1,6 +1,5 @@
 import React from 'react';
  
-import EmployeeDetails from './EmployeeDetails';
 
 const DisplayList = () => {
 
@@ -13,31 +12,33 @@ const DisplayList = () => {
     const handelClick = () => {
 
         setShow(true);
-            setListValue((prev)=>[
-                ...prev,
-                userInput.trim()
-            ]);
-             setUserInput("");
-             inputRef.current?.focus()
-        }
-    
-    const handelChange = (value:string) =>{
-            setUserInput(value);
+        setListValue((prev) => [
+            ...prev,
+            userInput.trim()
+        ]);
+        setUserInput("");
+        inputRef.current?.focus()
+    }
+
+    const handelChange = (value: string) => {
+        setUserInput(value);
     }
     return (
         <>
-            <input type="text" ref={inputRef} value={userInput} onChange={(e)=>handelChange(e.target.value)} placeholder="Enter text here" />
-            <button onClick={() => handelClick()}>Submit</button>
+            <div>
+                <input type="text" ref={inputRef} value={userInput} onChange={(e) => handelChange(e.target.value)} placeholder="Enter text here" />
+                <button onClick={() => handelClick()}>Submit</button>
+
+                {show && (
+                    listValue.length && listValue.map((item, index) => (
+                        <div key={index}>
+                            <li> {item}</li>
+                        </div>
+                    ))
+                )}
+            </div>
             
-            {show && (
-                listValue.length  && listValue.map((item, index) => (
-                    <div key={index}>
-                       <li> {item}</li>
-                    </div>
-                ))
-            )}
-            <EmployeeDetails></EmployeeDetails>
-      </>
+        </>
     )
 };
 
