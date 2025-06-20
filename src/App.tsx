@@ -7,6 +7,7 @@ import ReactLifeCycle from './components/ReactLifeCycle';
 import ClassComponent from './components/ClassComponentMounting';
 import ClassComponentUpdate from './components/ClassComponentUpdate';
 import ClassComponentUnMounting from './components/ClassComponentUnMounting';
+import MemoParentComponent from './components/useMemo/MemoParentComponent';
 
 function App() {
   return (
@@ -16,8 +17,10 @@ function App() {
       {/* <ReactLifeCycle ></ReactLifeCycle> */}
       {/* <ClassComponent color="white"></ClassComponent> */}
       {/* <ClassComponentUpdate color="white"></ClassComponentUpdate> */}
-      <ClassComponentUnMounting color="white" deleteUser={true}></ClassComponentUnMounting>
+      {/* <ClassComponentUnMounting color="white" deleteUser={true}></ClassComponentUnMounting> */}
+
       
+      <MemoParentComponent/>
     </div>
   );
 }
