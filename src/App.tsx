@@ -8,6 +8,9 @@ import ClassComponent from './components/ClassComponentMounting';
 import ClassComponentUpdate from './components/ClassComponentUpdate';
 import ClassComponentUnMounting from './components/ClassComponentUnMounting';
 import MemoParentComponent from './components/useMemo/MemoParentComponent';
+import ExpensiveComponentUseMemo from './components/useMemo/ExpensiveComponentUseMemo';
+import ExampleUseEffect from './components/useEffect/ExampleUseEffect';
+import ExampleUseMemo from './components/useMemo/ExampleUseMemo';
 
 function App() {
   return (
@@ -20,7 +23,13 @@ function App() {
       {/* <ClassComponentUnMounting color="white" deleteUser={true}></ClassComponentUnMounting> */}
 
       
-      <MemoParentComponent/>
+      {/* <MemoParentComponent/> */}
+
+      {/* <ExpensiveComponentUseMemo /> */}
+
+      {/* <ExampleUseEffect/> */}
+
+      <ExampleUseMemo/>
     </div>
   );
 }
